@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #FFFFFF;
+    background: #41295a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F0743, #41295a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F0743, #41295a);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    cursor: pointer;
+    margin: 50px;
+    border-radius: 3px;
+    perspective: 1000px;
+}
+
+.card__inner {
+    background-color: #FFFFFF;
+    color: #41295a;
+
+    height: 350px;
+    width: 300px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card__inner {
+    transform: rotateY(180deg);
+}
+
+.card__content {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.card__content--back {
+  transform: rotateY(180deg);
+} 
